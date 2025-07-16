@@ -1,5 +1,5 @@
 export const fetchYouTube = async (keyword) => {
-  const apiKey = "AIzaSyAVOdlu-n36UTIBuPU30njo406sXDk_LPI";
+  const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
   const maxResults = 3;
 
   const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(
