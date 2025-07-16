@@ -44,6 +44,7 @@ export default function App() {
             <div className="w-full flex flex-wrap gap-2 mb-6 justify-center">
               {history.map((item) => (
                 <button
+                  key={item}
                   className="px-3 py-1 rounded-full bg-blue-800/40 text-blue-200 text-xs md:text-sm font-medium shadow hover:bg-blue-700/60 transition border border-blue-500/20"
                   onClick={() => fetchResults(item)}
                 >
@@ -106,7 +107,8 @@ export default function App() {
                             key={item.title}
                             type={type}
                             title={item.title}
-                            site={item.source}
+                            link={item.link}
+                            source={item.source}
                           />
                         ))}
                       </ul>
