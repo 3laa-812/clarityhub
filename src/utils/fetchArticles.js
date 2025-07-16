@@ -31,7 +31,7 @@ export const fetchArticles = async (keyword) => {
       .map((hit) => ({
         type: "article",
         title: hit.title,
-        source: `HN by ${hit.author}`,
+        source: "HN",
         link: hit.url,
       }));
 

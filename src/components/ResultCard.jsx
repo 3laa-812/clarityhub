@@ -15,11 +15,13 @@ const ResultCard = ({ type, title, link, source }) => {
   }
   return (
     <li className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2 text-white/90">
-      {icon}
+      <div className="w-6 h-6 flex items-center justify-center shrink-0">
+        {icon}
+      </div>
       <span className="font-medium">{title}</span>
       {link && (
         <span className={`ml-auto text-xs font-semibold ${colorClass}`}>
-          <a className="flex gap-2" href={link}>
+          <a target="_blank" className="flex gap-2" href={link}>
             {" "}
             <ArrowRight className="w-4 h-4" /> {source}
           </a>

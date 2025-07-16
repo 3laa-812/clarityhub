@@ -1,20 +1,32 @@
 import { Search, Moon, Sun } from "lucide-react";
 import { useSearchStore } from "../store/searchStore";
 
-const SearchBar = ({  darkMode, setDarkMode }) => {
+const SearchBar = ({ darkMode, setDarkMode }) => {
   const { keyword, setKeyword, fetchResults } = useSearchStore();
+
   const handleKeyDown = (e) => {
-    if(e.key == "Enter") {
+    if (e.key == "Enter") {
       const keyword = e.currentTarget.value.trim();
-      if(keyword){
+      if (keyword) {
         fetchResults(keyword);
       }
     }
-  }
+  };
+
+  const handleSearchIconClick = () => {
+    const trimmedKeyword = keyword.trim();
+    if (trimmedKeyword) {
+      fetchResults(trimmedKeyword);
+    }
+  };
+
   return (
     <>
       <div className="w-full flex items-center bg-black/70 border border-blue-500/30 rounded-full px-4 py-2 mb-4 shadow-sm focus-within:ring-2 focus-within:ring-blue-500 transition-all">
-        <Search className="text-blue-400 w-5 h-5 mr-2" />
+        <Search
+          onClick={handleSearchIconClick}
+          className="text-blue-400 w-5 h-5 mr-2 hover:cursor-pointer"
+        />
         <input
           onKeyDown={handleKeyDown}
           className="flex-1 bg-transparent outline-none text-white placeholder:text-gray-400 text-base md:text-lg"

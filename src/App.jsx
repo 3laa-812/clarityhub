@@ -26,7 +26,7 @@ export default function App() {
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="w-full h-full bg-gradient-to-br from-blue-900/60 via-purple-900/40 to-gray-900/80 blur-2xl" />
       </div>
-      <main className="relative z-10 w-full max-w-lg mx-auto px-4">
+      <main className="my-4 relative z-10 w-full max-w-lg mx-auto px-4">
         <AnimatePresence mode="wait">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
