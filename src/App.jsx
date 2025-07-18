@@ -7,10 +7,11 @@ import SearchBar from "./components/SearchBar";
 import ResultCard from "./components/ResultCard";
 import { useSearchStore } from "./store/searchStore";
 import Loader from "./components/ui/Loader";
-
+import Footer from "./components/Footer";
 
 export default function App() {
-  const { keyword, loading, history, fetchResults, resultsCache } = useSearchStore();
+  const { keyword, loading, history, fetchResults, resultsCache } =
+    useSearchStore();
   const currentResults = resultsCache[keyword] || [];
   const [darkMode, setDarkMode] = useState(true);
 
@@ -117,6 +118,10 @@ export default function App() {
                 })}
               </motion.section>
             )}
+            {/* Footer */}
+            <div className="my-4">
+              <Footer />
+            </div>
           </motion.div>
         </AnimatePresence>
       </main>
